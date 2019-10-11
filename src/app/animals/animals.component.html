@@ -1,0 +1,15 @@
+<p>
+  animals works!
+</p>
+
+Min legs: <input type="number" name="legs" min=0 max = 8 [value]="minLegs" (input)="minLegs=$event.target.value">
+Max legs: <input type="number" name="legs" min=0 max = 8 [value]="maxLegs" (input)="maxLegs=$event.target.value">
+
+<div *ngFor="let animal of animals">
+  <div *ngIf="animal.legs >= minLegs  && animal.legs <= maxLegs">
+    <h3>{{animal.name}}</h3>
+    I am {{animal.name}} the {{animal.type}}. I have {{animal.legs}} legs!
+    <br>
+    <img src="http://localhost:8080/image?type={{animal.type}}" width="30%">
+  </div>
+</div>
